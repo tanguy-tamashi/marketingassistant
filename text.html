@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Bot</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "671b93ec-0ce9-42e0-9f3d-00cf00bb6b6d",
+        apiHost: "https://flowiseai-railway-production-7641.up.railway.app",
+        chatflowConfig: {
+            // topK: 2
+        },
+        theme: {
+            button: {
+                backgroundColor: "#3B81F6",
+                right: 20,
+                bottom: 20,
+                size: 48, // small | medium | large | number
+                dragAndDrop: true,
+                iconColor: "white",
+                customIconSrc: "https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg",
+                autoWindowOpen: {
+                    autoOpen: true, //parameter to control automatic window opening
+                    openDelay: 2, // Optional parameter for delay time in seconds
+                    autoOpenOnMobile: false, //parameter to control automatic window opening in mobile
+                    },
+            },
+            tooltip: {
+                showTooltip: true,
+                tooltipMessage: 'Hello ! 😎',
+                tooltipBackgroundColor: 'black',
+                tooltipTextColor: 'white',
+                tooltipFontSize: 16,
+            },
+            chatWindow: {
+                showTitle: true,
+                title: 'Linkedin Assistant',
+                titleAvatarSrc: '',
+                showAgentMessages: true,
+                welcomeMessage: 'Give me the name of your company, your objective, and your audience, and I will give you Linkedin post to reach your goal !',
+                errorMessage: 'Not sure to understand',
+                backgroundColor: "#ffffff",
+                backgroundImage: 'enter image path or link', // If set, this will overlap the background color of the chat window.
+                height: 700,
+                width: 600,
+                fontSize: 16,
+                //starterPrompts: ['What is a bot?', 'Who are you?'], // It overrides the starter prompts set by the chat flow passed
+                starterPromptFontSize: 15,
+                clearChatOnReload: true, // If set to true, the chat will be cleared when the page reloads.
+                botMessage: {
+                    backgroundColor: "#f7f8ff",
+                    textColor: "#303235",
+                    showAvatar: true,
+                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png",
+                },
+                userMessage: {
+                    backgroundColor: "#3B81F6",
+                    textColor: "#ffffff",
+                    showAvatar: true,
+                    avatarSrc: "https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png",
+                },
+                textInput: {
+                    placeholder: 'Type your question',
+                    backgroundColor: '#ffffff',
+                    textColor: '#303235',
+                    sendButtonColor: '#3B81F6',
+                    autoFocus: true, // If not used, autofocus is disabled on mobile and enabled on desktop. true enables it on both, false disables it on both.
+                    sendMessageSound: true,
+                    // sendSoundLocation: "send_message.mp3", // If this is not used, the default sound effect will be played if sendSoundMessage is true.
+                    receiveMessageSound: true,
+                    // receiveSoundLocation: "receive_message.mp3", // If this is not used, the default sound effect will be played if receiveSoundMessage is true. 
+                },
+                feedback: {
+                    color: '#303235',
+                },
+                footer: {
+                    textColor: '#303235',
+                    text: 'Powered by',
+                    company: 'MincaAI',
+                    companyLink: 'https://mincaai.framer.ai/',
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
